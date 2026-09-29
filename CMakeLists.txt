@@ -27,13 +27,19 @@ SET(DUCKDB_PLUGIN_SOURCES
   duckdb_udf.cc
 )
 
-MYSQL_ADD_PLUGIN(duckdb ${DUCKDB_PLUGIN_SOURCES}
-  STORAGE_ENGINE
-  MODULE_ONLY
-  COMPONENT duckdb-engine
-  CONFIG ${CMAKE_CURRENT_SOURCE_DIR}/duckdb.cnf
-  LINK_LIBRARIES duckdb_runtime duckdb_convertor duckdb_common ${DUCKDB_LIBRARY}
-)
+cmake_minimum_required(VERSION 3.12)
+find_package(mariadb-plugin REQUIRED)
+MARIADB_ADD_PLUGIN( duckdb ${DUCKDB_PLUGIN_SOURCES STORAGE_ENGINE MODULE_ONLY
+                 RECOMPILE_FOR_EMBEDDED
+                 AUTHOR "drrtuy,lfedorov"
+                 VERSION 1.0
+                 DESCRIPTION "Eight functions implementing levenstein distance"
+  		 COMPONENT duckdb-engine
+                 CONFIG ${CMAKE_CURRENT_SOURCE_DIR}/duckdb.cnf
+                 LINK_LIBRARIES duckdb_runtime duckdb_convertor duckdb_common ${DUCKDB_LIBRARY}
+                 )
+include(CPack)
+
 
 IF(TARGET duckdb)
   duckdb_setup_target(duckdb)
