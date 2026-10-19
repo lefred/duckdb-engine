@@ -1,0 +1,25 @@
+name: Build and package DUCKDB storage engine
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin-new.yml@main
+    with:
+       mariadb_versions: |
+          74647
+          75263
+       test_suites: duckdb
+       almalinux_version: "10"
+       allow_partial_release: true
