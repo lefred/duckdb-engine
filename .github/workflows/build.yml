@@ -25,4 +25,9 @@ jobs:
       sdk_image: quay.io/lefred14/mariadb-plugin-build
       mariadb_versions: |
           13.0.2
+          13.1.1
+
+      #cmake_options: 
+      test_suite: duckdb
+      run_tests: false
 
