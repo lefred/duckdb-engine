@@ -1,0 +1,28 @@
+name: Build and package DUCKDB storage engine
+
+on:
+  push:
+    branches:
+      - foundry
+    tags:
+      - "v*"
+
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin.yml@main
+    with:
+      plugin_name: duckdb
+      plugin_directory: ha_duckdb
+      build_target: ha_duckdb
+      plugin_library: ha_duckdb.so
+
+      sdk_image: quay.io/lefred14/mariadb-plugin-build
+      mariadb_versions: |
+          13.0.2
+
