@@ -23,5 +23,5 @@ jobs:
        test_suites: duckdb
        almalinux_version: "10"
        allow_partial_release: true
-       extra_packages_deb: libatomic
+       extra_packages_deb: libatomic1
        extra_packages_rpm: libatomic
