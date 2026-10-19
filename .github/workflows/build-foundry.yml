@@ -3,7 +3,7 @@ name: Build and package DUCKDB storage engine
 on:
   push:
     branches:
-      - main
+      - foundry
     tags:
       - "v*"
 
