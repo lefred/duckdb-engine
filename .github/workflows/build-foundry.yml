@@ -25,3 +25,4 @@ jobs:
        allow_partial_release: true
        extra_packages_deb: libatomic1
        extra_packages_rpm: libatomic
+       parallel: "4"
