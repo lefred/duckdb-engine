@@ -19,8 +19,8 @@ jobs:
     with:
       # Autobake build IDs: 11.4.13, 12.3.4
       mariadb_versions: |
-        74647
+        777101
         75263
-      package_formats: deb
+      package_formats: tgz            
       test_suites: duckdb
       parallel: "4"
