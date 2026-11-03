@@ -1,4 +1,4 @@
-name: Build and package DUCKDB storage engine
+name: Build and package DuckDB engine plugin
 
 on:
   push:
@@ -17,12 +17,10 @@ jobs:
   build:
     uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin-new.yml@main
     with:
-       mariadb_versions: |
-          74647
-          75263
-       test_suites: duckdb_engine
-       almalinux_version: "10"
-       allow_partial_release: true
-       extra_packages_deb: libatomic1
-       extra_packages_rpm: libatomic
-       parallel: "4"
+      # Autobake build IDs: 11.4.13, 12.3.4
+      mariadb_versions: |
+        777101
+        75263
+      package_formats: tgz            
+      test_suites: duckdb
+      parallel: "4"
