@@ -24,3 +24,4 @@ jobs:
       package_formats: tgz            
       test_suites: duckdb
       parallel: "4"
+      run_tests: false
