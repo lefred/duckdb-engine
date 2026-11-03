@@ -22,6 +22,5 @@ jobs:
         77101
         75263
       package_formats: tgz            
-      test_suites: duckdb
+      # test_suites: duckdb
       parallel: "4"
-      run_tests: false
