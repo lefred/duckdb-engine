@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build:
-    uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin-new.yml@main
+    uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin-new.yml@v1
     with:
       # Autobake build IDs: 11.4.14, 118.10, 12.3.4, 13.1.2, 13.2.0
       mariadb_versions: |
