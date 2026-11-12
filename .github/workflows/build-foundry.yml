@@ -24,7 +24,7 @@ jobs:
         77522
         77100
         77144
-      package_formats: tgz            
+      package_formats: deb rpm tgz            
       # test_suites: duckdb
       parallel: "4"
       almalinux_version: "10"
