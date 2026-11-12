@@ -29,3 +29,4 @@ jobs:
       parallel: "4"
       almalinux_version: "10"
       allow_partial_release: true
+      extra_packages_rpm: libatomic
